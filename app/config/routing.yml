@@ -1,0 +1,7 @@
+hypertd_addressbook:
+    resource: "@HypertdAddressbookBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
+

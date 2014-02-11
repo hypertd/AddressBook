@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <title>{% block title %}{% endblock %} - My Webpage</title>
+            
+            <script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>    
+            <link rel="stylesheet" href="http://cdn.webix.io/edge/webix.css" type="text/css" media="screen" charset="utf-8">
+            <script src="http://cdn.webix.io/edge/webix.js" type="text/javascript" charset="utf-8"></script>    
+            
+            {% javascripts '@HypertdAddressbookBundle/Resources/public/js/*' %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+            
+            {% stylesheets 'bundles/hypertdaddressbook/css/*' filter='cssrewrite' %}
+                 <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        <div id="footer">
+            {% block footer %}
+                &copy; Copyright 2014 by Matthew Burgess.
+            {% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Hypertd\AddressbookBundle\Entity\Contact" table="Contact">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="firstname" type="string" column="firstname" length="255" nullable="false"/>
+    <field name="lastname" type="string" column="lastname" length="255" nullable="false"/>
+    <field name="address1" type="string" column="address1" length="255" nullable="false"/>
+    <field name="address2" type="string" column="address2" length="255" nullable="false"/>
+    <field name="city" type="string" column="city" length="255" nullable="false"/>
+    <field name="postal" type="string" column="postal" length="255" nullable="false"/>
+    <field name="tel" type="integer" column="tel" nullable="false"/>
+    <field name="tel2" type="integer" column="tel2" nullable="false"/>
+  </entity>
+</doctrine-mapping>

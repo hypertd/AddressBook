@@ -1,0 +1,37 @@
+{% extends "HypertdAddressBookBundle:Base:base.html.twig" %}
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+
+{% block content %}
+    <h1>Address book</h1>
+    Filter: <input type="text" id='myfilter' />
+    <div id="layout" style="padding:10px">
+        <ui:ui>
+          <ui:rows>
+             <ui:toolbar height="40" padding="10" width="100%">
+                    <ui:cols>
+                        <ui:button id="addBtn" css="crudBtn" type="imageButton" width="90" label="add" image="{{ asset('bundles/hypertdaddressbook/images/icons/icon_add.png') }}"></ui:button>
+                        <ui:button id="editBtn" css="crudBtn" type="imageButton" width="90" label="update" image="{{ asset('bundles/hypertdaddressbook/images/icons/icon_edit.png') }}"></ui:button>
+                        <ui:button id="deleteBtn" css="crudBtn" type="imageButton" width="90" label="delete" image="{{ asset('bundles/hypertdaddressbook/images/icons/icon_delete.png') }}"></ui:button>
+                    </ui:cols>
+            </ui:toolbar>
+               <ui:datatable id="contactTable" autowidth="true" autoheight="true" url="/addressbook/contact" datatype="xml" select="row" width="100%">
+                    <ui:column id="id" header="" sort="int"></ui:column>
+                    <ui:column id="firstname" header="First Name" sort="string"></ui:column>
+                    <ui:column id="lastname" header="Last Name" sort="string"></ui:column>
+                    <ui:column id="address_1" header="Address 1" sort="string"></ui:column>
+                    <ui:column id="address_2" header="Address 2" sort="string"></ui:column>
+                    <ui:column id="city" header="City" sort="string"></ui:column>
+                    <ui:column id="postal" header="Postal" sort="string"></ui:column>
+                    <ui:column id="tel_home" header="Home Tel" sort="integer"></ui:column>
+                    <ui:column id="tel_mobile" header="Mobile Tel" sort="integet"></ui:column>
+               </ui:datatable>
+          </ui:rows>
+        </ui:ui>
+    </div>
+{% endblock %}
